@@ -146,7 +146,7 @@ function list_files(path,files){
             }
             var ext = p.split('.').pop();
             if("|html|php|css|go|java|js|json|txt|sh|md|mp4|webm|avi|bmp|jpg|jpeg|png|gif|m4a|mp3|wav|ogg|mpg|mpeg|mkv|rm|rmvb|mov|wmv|asf|ts|flv|".indexOf(`|${ext.toLowerCase()}|`) >= 0){
-	            p += "?a=view";
+	            p += "";
 	            c += " view";
             }
             html += `<li class="mdui-list-item file mdui-ripple" target="_blank"><a gd-type="${item.mimeType}" href="${p}" class="${c}">
@@ -179,10 +179,10 @@ function get_file(path, file, callback){
 
 
 
-// 文件展示 ?a=view
+// 文件展示 
 function file(path){
 	var name = path.split('/').pop();
-	var ext = name.split('.').pop().toLowerCase().replace(`?a=view`,"");
+	var ext = name.split('.').pop().toLowerCase().replace(``,"");
 	if("|html|php|css|go|java|js|json|txt|sh|md|".indexOf(`|${ext}|`) >= 0){
 		return file_code(path);
 	}
